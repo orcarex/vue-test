@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- *** IMPORTANT: use type="module" here! *** -->
+    
 </head>
 <body>
-    <div id="app-2">
-        <span v-bind:title="message">
-          鼠标悬停几秒钟查看此处动态绑定的提示信息！
-        </span>
-    </div>
+
+  <div class="app">
+    {{$t('menu.home')}}
+  </div>
 
     <script>
-        var app2 = new Vue({
-            el: '#app-2',
-            data: {
-                message: '页面加载于 ' + new Date().toLocaleString()
-            }
-        })
+      new Vue({
+        el: '#app',
+        i18n,
+        router,
+        template: '<Layout/>',
+        components: {
+          Layout
+        },
+      })
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     
 </body>
 </html>
